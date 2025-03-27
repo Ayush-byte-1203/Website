@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #42a5f5;
+        }
+        .setting-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .setting-item:hover {
+            background: #f1f1f1;
+        }
+        .setting-item i {
+            font-size: 24px;
+            color: #42a5f5;
+            margin-right: 15px;
+        }
+        .setting-item span {
+            font-size: 18px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Settings</h2>
+        
+        <!-- Personal Details -->
+        <div class="setting-item">
+            <i class="fas fa-user"></i>
+            <span>Change Personal Details</span>
+        </div>
+        
+        <!-- Notification Settings -->
+        <div class="setting-item">
+            <i class="fas fa-bell"></i>
+            <span>Notification Preferences</span>
+        </div>
+        
+        <!-- Security Settings -->
+        <div class="setting-item">
+            <i class="fas fa-lock"></i>
+            <span>Security & Password</span>
+        </div>
+        
+        <!-- Payment Settings -->
+        <div class="setting-item">
+            <i class="fas fa-credit-card"></i>
+            <span>Payment & Payouts</span>
+        </div>
+        
+        <!-- Privacy Settings -->
+        <div class="setting-item">
+            <i class="fas fa-user-shield"></i>
+            <span>Privacy Settings</span>
+        </div>
+        
+        <!-- Logout Option -->
+        <div class="setting-item" style="color: red;">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </div>
+    </div>
+</body>
+</html>

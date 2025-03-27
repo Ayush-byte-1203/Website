@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Login</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4a8eff;
+            margin-bottom: 20px;
+        }
+
+        /* Language Selection */
+        .radio-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background-color: #EEE;
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .name {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background: none;
+            transition: all 0.3s;
+        }
+
+        .radio-inputs .radio input:checked + .name {
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        /* Form Styles */
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a8eff;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a8eff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #3a7be0;
+        }
+
+        .register-link {
+            display: block;
+            margin-top: 15px;
+            color: #4a8eff;
+            text-decoration: none;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .form-group input {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .submit-btn {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const username = document.getElementById("username");
+            const password = document.getElementById("password");
+            const usernameError = document.getElementById("username-error");
+            const passwordError = document.getElementById("password-error");
+            let isValid = true;
+
+            // Reset error messages
+            usernameError.style.display = "none";
+            passwordError.style.display = "none";
+
+            if (username.value.trim() === "") {
+                usernameError.style.display = "block";
+                isValid = false;
+            }
+
+            if (password.value.trim() === "") {
+                passwordError.style.display = "block";
+                isValid = false;
+            }
+
+            if (isValid) {
+                window.location.href = 'Dashboard.html';
+            }
+        }
+
+        // Translations
+        const translations = {
+            en: {
+                heading: "Seller Login",
+                usernameLabel: "Username",
+                usernamePlaceholder: "Enter your username",
+                passwordLabel: "Password",
+                passwordPlaceholder: "Enter your password",
+                submitBtn: "Submit",
+                registerText: "Don't have an account? Register here"
+            },
+            hi: {
+                heading: "विक्रेता लॉगिन",
+                usernameLabel: "उपयोगकर्ता नाम",
+                usernamePlaceholder: "अपना उपयोगकर्ता नाम दर्ज करें",
+                passwordLabel: "पासवर्ड",
+                passwordPlaceholder: "अपना पासवर्ड दर्ज करें",
+                submitBtn: "जमा करें",
+                registerText: "क्या आपके पास खाता नहीं है? यहाँ रजिस्टर करें"
+            },
+            gu: {
+                heading: "વિક્રેતા લોગિન",
+                usernameLabel: "વપરાશકર્તા નામ",
+                usernamePlaceholder: "તમારું વપરાશકર્તા નામ દાખલ કરો",
+                passwordLabel: "પાસવર્ડ",
+                passwordPlaceholder: "તમારો પાસવર્ડ દાખલ કરો",
+                submitBtn: "સબમિટ",
+                registerText: "ખાતું નથી? અહીં નોંધણી કરો"
+            }
+        };
+
+        function updateLanguage() {
+            const language = document.querySelector('input[name="language"]:checked').value;
+            const text = translations[language];
+
+            document.getElementById("heading").innerText = text.heading;
+            document.getElementById("username-label").innerText = text.usernameLabel;
+            document.getElementById("password-label").innerText = text.passwordLabel;
+            document.getElementById("submit-btn").innerText = text.submitBtn;
+            document.getElementById("register-link").innerText = text.registerText;
+            document.getElementById("username").placeholder = text.usernamePlaceholder;
+            document.getElementById("password").placeholder = text.passwordPlaceholder;
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2 id="heading">Seller Login</h2>
+        
+        <div class="radio-inputs">
+            <label class="radio">
+                <input type="radio" name="language" value="en" checked onchange="updateLanguage()">
+                <span class="name">English</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="language" value="hi" onchange="updateLanguage()">
+                <span class="name">हिन्दी</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="language" value="gu" onchange="updateLanguage()">
+                <span class="name">ગુજરાતી</span>
+            </label>
+        </div>
+
+        <form onsubmit="event.preventDefault(); validateForm();">
+            <div class="form-group">
+                <label for="username" id="username-label">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+                <div class="error-message" id="username-error">Username is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="password" id="password-label">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <div class="error-message" id="password-error">Password is required.</div>
+            </div>
+            <button type="submit" id="submit-btn" class="submit-btn" onclick="">Submit</button>
+        </form>
+        <a href="seller_reg.html" class="register-link" id="register-link">Don't have an account? Register here</a>
+    </div>
+</body>
+</html>
+            

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #42a5f5;
+            text-align: center;
+        }
+        .category-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #42a5f5;
+            border-radius: 5px;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .product img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .rating {
+            color: #ffb400;
+        }
+    </style>
+    <script>
+        function filterCategory() {
+            let category = document.getElementById("category").value;
+            let products = document.getElementsByClassName("product");
+            
+            for (let product of products) {
+                if (category === "all" || product.dataset.category === category) {
+                    product.style.display = "flex";
+                } else {
+                    product.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Products</h2>
+        <select id="category" class="category-select" onchange="filterCategory()">
+            <option value="all">All Categories</option>
+            <option value="Jwellery and accessories">Jwellery and accessories</option>
+            <option value="Food">Food</option>
+            <option value="Home Decore">Home Decore</option>
+            <option value="Toys">Toys</option>
+        </select>
+        
+        <div class="product" data-category="Jwellery and accessories">
+            <img src="seller_manage1.jpeg"alt="Bracelate">
+            <div class="product-info">
+                <h3>Bracelate</h3>
+                <p>Price: ₹249 <p>
+                <p class="rating">⭐ 4.5/5</p>
+            </div>
+        </div>
+        
+        <div class="product" data-category="Home Decore">
+            <img src="seller_manage2.jpeg" alt="Wall Hanging">
+            <div class="product-info">
+                <h3>Wall Hanging</h3>
+                <p>Price: ₹1000</p>
+                <p class="rating">⭐ 4.8/5</p>
+            </div>
+        </div>
+        
+        <div class="product" data-category="Toys">
+            <img src="seller_manage5.jpeg" alt="Toy Fish">
+            <div class="product-info">
+                <h3>Toy Fish</h3>
+                <p>Price: ₹350</p>
+                <p class="rating">⭐ 4.2/5</p>
+            </div>
+        </div>
+        
+        <div class="product" data-category="Food">
+            <img src="seller_manage3.jpeg" alt="Bhakharwadi">
+            <div class="product-info">
+                <h3>Bhakharwadi</h3>
+                <p>Price: ₹120</p>
+                <p class="rating">⭐ 4.3/5</p>
+            </div>
+        </div>
+        
+        <div class="product" data-category="Jwellery and accessories">
+            <img src="seller_manage4.jpeg"alt="Earings">
+            <div class="product-info">
+                <h3>Earings</h3>
+                <p>Price: ₹199</p>
+                <p class="rating">⭐ 4.6/5</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
