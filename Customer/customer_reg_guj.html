@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration</title>
+    <style>
+
+.radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 300px;
+            font-size: 14px;
+            margin: 20px auto;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+        }
+
+        .radio-inputs .radio input:checked + .name {
+            background-color: #fff;
+            font-weight: 600;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 20px;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .registration-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        
+        .registration-container h2 {
+            color: #4a8eff;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a8eff;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a8eff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #3a7be0;
+        }
+        
+        .login-link {
+            display: block;
+            margin-top: 15px;
+            color: #4a8eff;
+            text-decoration: none;
+        }
+        
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>વિક્રેતા નોંધણી</h2>
+
+        
+        <form>
+            <div class="form-group">
+                <label for="name">પૂરું નામ</label>
+                <input type="text" id="name" name="name" placeholder="તમારું પૂરું નામ દાખલ કરો" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">વપરાશકર્તા નામ</label>
+                <input type="text" id="username" name="username" placeholder="તમારું વપરાશકર્તા નામ દાખલ કરો" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact">સંપર્ક</label>
+                <input type="numeric" id="contact" name="contact" placeholder="તમારો સંપર્ક નંબર દાખલ કરો" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">પાસવર્ડ</label>
+                <input type="password" id="password" name="password" placeholder="તમારો પાસવર્ડ દાખલ કરો" required>
+            </div>
+            <button type="button" class="submit-btn" onclick="window.location.href='homepage.html';">Register</button>
+            <!-- <a href='/Users/ayush/Desktop/Website proj/original/homepage.html' class="submit-btn">Register</a> -->
+        </form>
+        <a href='customer_login.html'>પહેલેથી એકાઉન્ટ છે? અહીં લોગિન કરો</a>
+    </div>
+</body>
+</html>

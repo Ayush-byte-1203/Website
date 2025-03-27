@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <style>
+        .chatBtn {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B, #FF2525, #FFE53B);
+    cursor: pointer;
+    padding-top: 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+    position: fixed;
+    right: 20px; /* Move to the right */
+    bottom: 20px; /* Keep it at the bottom */
+    background-size: 300%;
+    background-position: left;
+    transition-duration: 1s;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px;
+    opacity: 0;
+    background-color: rgb(255, 180, 82);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+}
+
+.chatBtn:hover .tooltip {
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+
+.chatBtn:hover {
+    background-position: left;
+    transition-duration: 1s;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #e3f2fd;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #64b5f6;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            background-color: white;
+            color: #64b5f6;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .offer-banner {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #bbdefb;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 250px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: flex;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .category {
+            background-color: #bbdefb;
+            color: black;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .category img {
+            width: 50%;
+            height:50%;
+            margin-bottom: 5px;
+        }
+
+        .category:hover {
+            background-color: #42a5f5;
+        }
+
+        .best-sellers {
+            margin: 40px 20px;
+            text-align: center;
+        }
+
+        .best-sellers h2 {
+            color: #1565c0;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            /* height: auto; */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <a href="customer_setting.html">
+            <span class="user-icon">👤</span>
+            </a>
+            <div class="logo">Made By Heart</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+            <a href="cartview.html">
+            <div class="cart-icon">🛒</div>
+            </a>
+        </header>
+
+        <div class="offer-banner">
+            <img src="banner.jpeg">
+        </div>
+
+        <div class="categories">
+            <a href="J_A.html">
+            <div class="category"><img src="j_a_1.jpeg" alt="Jwellery and accessories">Jwellery and accessories 
+            </div>
+            </a>
+            <a href="Faishon.html">
+            <div class="category"><img src="faishon3.jpeg" alt="Fashion">Fashion</div>
+            </a>
+            <a href="H_D.html">
+            <div class="category"><img src="h_d_2.jpeg" alt="Home Decore">Home Decore</div>
+            </a>
+            <a href="Food.html">
+            <div class="category"><img src="food_4.jpeg" alt="Food">Food
+            </div>
+            </a>
+            <a href="Toys.html">
+            <div class="category"><img src="toy_3.jpeg" alt="Toys">Toys</div>
+            </a>
+        </div>
+
+        <div class="best-sellers">
+            <h2>Best Selling Items</h2>
+            <div class="products">
+                <div class="product"><img src="best_1.jpeg" alt="Product 1"><p>Product 1</p></div>
+                <div class="product"><img src="best_2.jpeg" alt="Product 2"><p>Product 2</p></div>
+                <div class="product"><img src="best_3.jpeg" alt="Product 3"><p>Product 3</p></div>
+                <div class="product"><img src="best_4.jpeg" alt="Product 4"><p>Product 4</p></div>
+            </div>
+        </div>
+    </div>
+    <button class="chatBtn">
+        <svg height="1.6em" fill="white" xml:space="preserve" viewBox="0 0 1000 1000" y="0px" x="0px" version="1.1">
+       <path d="M881.1,720.5H434.7L173.3,941V720.5h-54.4C58.8,720.5,10,671.1,10,610.2v-441C10,108.4,58.8,59,118.9,59h762.2C941.2,59,990,108.4,990,169.3v441C990,671.1,941.2,720.5,881.1,720.5L881.1,720.5z M935.6,169.3c0-30.4-24.4-55.2-54.5-55.2H118.9c-30.1,0-54.5,24.7-54.5,55.2v441c0,30.4,24.4,55.1,54.5,55.1h54.4h54.4v110.3l163.3-110.2H500h381.1c30.1,0,54.5-24.7,54.5-55.1V169.3L935.6,169.3z M717.8,444.8c-30.1,0-54.4-24.7-54.4-55.1c0-30.4,24.3-55.2,54.4-55.2c30.1,0,54.5,24.7,54.5,55.2C772.2,420.2,747.8,444.8,717.8,444.8L717.8,444.8z M500,444.8c-30.1,0-54.4-24.7-54.4-55.1c0-30.4,24.3-55.2,54.4-55.2c30.1,0,54.4,24.7,54.4,55.2C554.4,420.2,530.1,444.8,500,444.8L500,444.8z M282.2,444.8c-30.1,0-54.5-24.7-54.5-55.1c0-30.4,24.4-55.2,54.5-55.2c30.1,0,54.4,24.7,54.4,55.2C336.7,420.2,312.3,444.8,282.2,444.8L282.2,444.8z"></path>
+       </svg>
+       <span class="tooltip">Chat</span>
+       </button>
+</body>
+</html>

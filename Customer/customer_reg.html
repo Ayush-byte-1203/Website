@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration</title>
+    <style>
+       .radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 300px;
+            font-size: 14px;
+            margin: 20px auto;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+        }
+
+        .radio-inputs .radio input:checked + .name {
+            background-color: #fff;
+            font-weight: 600;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 20px;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .registration-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        
+        .registration-container h2 {
+            color: #4a8eff;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a8eff;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a8eff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #3a7be0;
+        }
+        
+        .login-link {
+            display: block;
+            margin-top: 15px;
+            color: #4a8eff;
+            text-decoration: none;
+        }
+        
+        .login-link:hover {
+            text-decoration: underline;
+        }
+         /* Your existing styles remain unchanged */
+    </style>
+    <script>
+
+function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let username = document.getElementById("username").value.trim();
+            // let business = document.getElementById("business").value.trim();
+            let sellerId = document.getElementById("contact").value.trim();
+            let password = document.getElementById("password").value.trim();
+            
+            let isValid = true;
+            
+            // Remove existing error messages
+            document.querySelectorAll(".error-message").forEach(el => el.remove());
+
+            function showError(input, message) {
+                let error = document.createElement("div");
+                error.className = "error-message";
+                error.innerText = message;
+                input.parentNode.appendChild(error);
+            }
+            
+            if (name === "") {
+                showError(document.getElementById("name"), "Full Name is required.");
+                isValid = false;
+            }
+            if (email === "" || !email.includes("@") || !email.includes(".")) {
+                showError(document.getElementById("email"), "Valid Email is required.");
+                isValid = false;
+            }
+            if (username === "") {
+                showError(document.getElementById("username"), "Username is required.");
+                isValid = false;
+            }
+            // if (business === "") {
+            //     showError(document.getElementById("business"), "Business Name is required.");
+            //     isValid = false;
+            // }
+            if (contact === "") {
+                showError(document.getElementById("contact"), "contact is required.");
+                isValid = false;
+            }
+            if (password.length < 6) {
+                showError(document.getElementById("password"), "Password must be at least 6 characters.");
+                isValid = false;
+            }
+            
+            if (isValid) {
+                window.location.href="homepage.html";
+            }
+        }
+
+
+        const translations = {
+            en: {
+                heading: "Seller Registration",
+                name: "Full Name",
+                email: "Email",
+                username: "Username",
+                contact: "  Contact",
+                password: "Password",
+                registerBtn: "Register",
+                loginText: "Already have an account? Login here",
+                placeholders: {
+                    name: "Enter your Full Name",
+                    email: "Enter your Email",
+                    username: "Enter your Username",
+                    contact: "Enter your Contact Number",
+                    password: "Enter your Password"
+                }
+            },
+            hi: {
+                heading: "विक्रेता पंजीकरण",
+                name: "पूरा नाम",
+                email: "ईमेल",
+                username: "उपयोगकर्ता नाम",
+                contact: "संपर्क",
+                password: "पासवर्ड",
+                registerBtn: "रजिस्टर करें",
+                loginText: "पहले से खाता है? यहाँ लॉगिन करें",
+                placeholders: {
+                    name: "अपना पूरा नाम दर्ज करें",
+                    email: "अपना ईमेल दर्ज करें",
+                    username: "अपना उपयोगकर्ता नाम दर्ज करें",
+                    contact: "अपना संपर्क नंबर दर्ज करें",
+                    password: "अपना पासवर्ड दर्ज करें"
+                }
+            },
+            gu: {
+                heading: "વિક્રેતા નોંધણી",
+                name: "પૂર્ણ નામ",
+                email: "ઇમેઇલ",
+                username: "વપરાશકર્તા નામ",
+                contact: "સંપર્ક",
+                password: "પાસવર્ડ",
+                registerBtn: "નોંધણી કરો",
+                loginText: "પહેલેથી એક ખાતું છે? અહીં લૉગિન કરો",
+                placeholders: {
+                    name: "તમારું સંપૂર્ણ નામ દાખલ કરો",
+                    email: "તમારું ઈમેલ દાખલ કરો",
+                    username: "તમારું વપરાશકર્તા નામ દાખલ કરો",
+                    contact: "તમારો સંપર્ક નંબર દાખલ કરો",
+                    password: "તમારું પાસવર્ડ દાખલ કરો"
+                }
+            }
+        };
+
+        function updateLanguage() {
+            const lang = document.querySelector('input[name="language"]:checked').value;
+            const text = translations[lang];
+
+            document.getElementById("heading").innerText = text.heading;
+            document.getElementById("name-label").innerText = text.name;
+            document.getElementById("email-label").innerText = text.email;
+            document.getElementById("username-label").innerText = text.username;
+            // document.getElementById("business-label").innerText = text.business;
+            document.getElementById("contact-label").innerText = text.contact;
+            document.getElementById("password-label").innerText = text.password;
+            document.getElementById("register-btn").innerText = text.registerBtn;
+            document.getElementById("login-link").innerText = text.loginText;
+            
+            document.getElementById("name").placeholder = text.placeholders.name;
+            document.getElementById("email").placeholder = text.placeholders.email;
+            document.getElementById("username").placeholder = text.placeholders.username;
+            // document.getElementById("business").placeholder = text.placeholders.business;
+            document.getElementById("contact").placeholder = text.placeholders.contact;
+            document.getElementById("password").placeholder = text.placeholders.password;
+        }
+    </script>
+</head>
+<body>
+    <div class="registration-container">
+        <h2 id="heading">Customer Registration</h2>
+        
+        <div class="radio-inputs">
+            <label class="radio">
+                <input type="radio" name="language" value="en" checked onchange="updateLanguage()">
+                <span class="name">English</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="language" value="hi" onchange="updateLanguage()">
+                <span class="name">हिन्दी</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="language" value="gu" onchange="updateLanguage()">
+                <span class="name">ગુજરાતી</span>
+            </label>
+        </div>
+        
+        <form onsubmit="validateForm(event)">
+            <div class="form-group">
+                <label for="name" id="name-label">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" id="email-label">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="username" id="username-label">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+            </div>
+            <!-- <div class="form-group">
+                <label for="business" id="business-label">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Enter your Business Name" required>
+            </div> -->
+            <div class="form-group">
+                <label for="contact" id="contact-label">Contact</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
+            </div>
+            <div class="form-group">
+                <label for="password" id="password-label">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            </div>
+            <button type="submit" id="register-btn" class="submit-btn">Register</button>
+        </form>
+        <a href='customer_login.html' class="login-link" id="login-link">Already have an account? Login here</a>
+    </div>
+</body>
+</html>

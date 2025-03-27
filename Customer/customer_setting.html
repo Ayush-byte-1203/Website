@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #1565c0;
+        }
+        .setting-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+        .setting-item:hover {
+            background: #f1f1f1;
+        }
+        .setting-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Settings</h2>
+        <div class="setting-item"><span class="setting-icon">👤</span> Profile Details</div>
+        <div class="setting-item"><span class="setting-icon">🔧</span> Manage Profile</div>
+        <div class="setting-item"><span class="setting-icon">📍</span> Manage Address</div>
+        <div class="setting-item"><span class="setting-icon">💳</span> Manage Payment Methods</div>
+        <div class="setting-item"><span class="setting-icon">🎁</span> Offers</div>
+        <div class="setting-item"><span class="setting-icon">🔒</span> Security & Privacy</div>
+        <div class="setting-item"><span class="setting-icon">📦</span> Orders</div>
+        <div class="setting-item"><span class="setting-icon">🚪</span> Logout</div>
+        <div class="setting-item"><span class="setting-icon">🔄</span> Switch User</div>
+        <div class="setting-item"><span class="setting-icon">📞</span> Customer Care</div>
+    </div>
+</body>
+</html>

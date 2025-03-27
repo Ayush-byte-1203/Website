@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d0e8ff; /* Light blue background */
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            background: #f8f9fa;
+        }
+        .payment-option input {
+            margin-right: 10px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Options</h2>
+        
+        <!-- Saved Cards -->
+        <h4>Saved Cards</h4>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="saved-card"> Visa **** 1234
+        </div>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="saved-card"> MasterCard **** 5678
+        </div>
+        
+        <!-- UPI IDs -->
+        <h4>Saved UPI IDs</h4>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="saved-upi"> user@upi
+        </div>
+        
+        <!-- Payment Methods -->
+        <h4>Pay with</h4>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="google-pay"> Google Pay
+        </div>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="amazon-pay"> Amazon Pay
+        </div>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="paytm"> Paytm
+        </div>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="credit-debit"> Add Credit/Debit Card
+        </div>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="upi"> Pay with UPI
+        </div>
+        <div class="payment-option">
+            <input type="radio" name="payment" value="cod"> Cash on Delivery
+        </div>
+
+        <button class="btn">Proceed to Pay</button>
+    </div>
+</body>
+</html>
