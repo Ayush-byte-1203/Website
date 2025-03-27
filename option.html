@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our E-Commerce</title>
+    <style>
+        /* Set background image and center content */
+        body {
+            background: url() no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            background-color: lightblue;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container styling */
+        .container {
+            background: rgba(0, 0, 0, 0.6); /* Slight overlay for better visibility */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Flexbox to align login options */
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Styling for login buttons */
+        .option {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .option img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Made By Heart</h1>
+        <p>Choose to login as:</p>
+        
+        <!-- Options to select between seller and customer -->
+        <div class="options">
+            
+            <div class="option" onclick="window.location.href='seller-login.html'">
+             <a href='seller_lang/seller_login.html'>
+                <img src="images/seller.jpeg" alt="Seller Icon">
+            </a>
+                <p>Login as Seller</p>
+            </div>
+            <div class="option" onclick="window.location.href='customer-login.html'">
+               <a href='customer_lang/customer_login.html'> 
+                <img src='images/customer.jpeg' alt="Customer Icon">
+                </a> 
+                <p>Login as Customer</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
